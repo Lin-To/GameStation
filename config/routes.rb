@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :user, only: [:create, :update, :show] do
-        resource :games, only: [:create, :update, :show]
-      end
-      resources :games, only: [:index]
+      resources :games
       post '/login', to: 'login#login', as: :login
+      resources :users, only: [:show]
     end
   end
 end
