@@ -1,11 +1,9 @@
 class Api::V1::LoginController < Api::V1::BaseController
-
   URL = "https://api.weixin.qq.com/sns/jscode2session".freeze
-
   def wechat_user
     params = {
-      appId: appId,
-      secret: secret,
+      appId: ENV["appId"],
+      secret: ENV["secret"],
       js_code: params[:code],
       grant_type: authorization_code
     }
@@ -20,23 +18,5 @@ class Api::V1::LoginController < Api::V1::BaseController
       userName: @user.name,
       userDescription: @user.description
     }
-  end
-
-  def index
-  end
-
-  def new
-  end
-
-  def show
-  end
-
-  def update
-  end
-
-  def create
-  end
-
-  def destroy
   end
 end
