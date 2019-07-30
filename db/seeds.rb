@@ -15,3 +15,5 @@ User.destroy_all
       )
   end
 end
+p User.all
+p Game.all
