@@ -3,7 +3,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :games
       post '/login', to: 'login#login', as: :login
-      resources :users, only: [:show]
+      resources :users, only: [:show] do
+        resources :bookings, only: [:show, :create, :update, :destroy]
+      end
     end
   end
 end
