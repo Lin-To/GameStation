@@ -5,5 +5,6 @@ class Api::V1::UsersController < Api::V1::BaseController
     # show all games owned by a user
     @user = User.find(params[:id])
     @games = @user.games
+    @bookings = @user.bookings
   end
 end

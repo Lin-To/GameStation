@@ -24,7 +24,7 @@ class Api::V1::GamesController < Api::V1::BaseController
   def create
     @game = Game.create(game_params)
     if @game.save
-      render :show, status: :cerated
+      render :show, status: :created
     else
       render_error
     end
@@ -48,5 +48,4 @@ private
     render json: { errors: @game.errors.full_messages },
       status: :unprocessable_entity
   end
-
 end
