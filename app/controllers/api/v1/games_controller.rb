@@ -36,6 +36,7 @@ class Api::V1::GamesController < Api::V1::BaseController
   end
 
 private
+
   def set_game
     @game = Game.find(params[:id])
   end
@@ -48,5 +49,4 @@ private
     render json: { errors: @game.errors.full_messages },
       status: :unprocessable_entity
   end
-
 end
