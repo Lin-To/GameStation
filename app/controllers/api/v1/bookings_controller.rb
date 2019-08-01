@@ -1,4 +1,4 @@
-sclass Api::V1::BookingsController < Api::V1::BaseController
+class Api::V1::BookingsController < Api::V1::BaseController
   skip_before_action :verify_authenticity_token
   before_action :set_booking, only: [:show, :update, :destroy]
 
