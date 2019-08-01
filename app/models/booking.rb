@@ -7,4 +7,6 @@ class Booking < ApplicationRecord
   # accomplish via front-end?
   validates :game, presence: true
   validates :user, presence: true
+  validates :start_date, presence: true
+  validates :end_date, presence: true
 end
