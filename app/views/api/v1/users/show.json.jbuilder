@@ -1,4 +1,4 @@
-json.extract! @user, :id
+json.extract! @user, :id, :name, :description
 json.games @user.games do |game|
   json.extract! game, :id, :description, :name, :game, :edition
   json.date game.created_at.strftime("%m/%d/%y")
