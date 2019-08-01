@@ -25,6 +25,7 @@ Platforms = [
     Game.create(
       name: Faker::Game.title,
       description: Faker::Quotes::Shakespeare.king_richard_iii_quote,
+      status: 0,
       game: rand(2) == 1,
       edition: Platforms.sample,
       user: u
