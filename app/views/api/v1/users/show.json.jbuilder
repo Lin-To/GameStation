@@ -5,6 +5,6 @@ json.games @user.games do |game|
 end
 # for bookings
 json.bookings @user.bookings do |booking|
-  json.extract! booking, :id, :start_date, :end_date, :status
+  json.extract! booking, :id, :start_date, :end_date, :status, :user_id, :game_id
   json.date booking.created_at.strftime("%m/%d/%y")
 end
