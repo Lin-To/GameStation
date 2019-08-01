@@ -42,7 +42,7 @@ private
   end
 
   def game_params
-    params.require(:game).permit(:name, :description, :user_id)
+    params.require(:game).permit(:name, :description, :user_id, :start_date, :end_date, :game, :edition)
   end
 
   def render_error

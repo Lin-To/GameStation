@@ -7,12 +7,10 @@ class Api::V1::BookingsController < Api::V1::BaseController
   end
 
   def create
-    @booking = Booking.create(booking_params)
+    @booking = Booking.new(booking_params)
     if @booking.save
-      p "saved"
       render :show, status: :created
     else
-      p "cannot save"
       render_error
     end
   end
@@ -36,7 +34,7 @@ class Api::V1::BookingsController < Api::V1::BaseController
   end
 
   def booking_params
-    params.require(:booking).permit(:game_id, :user_id, :start_date, :end_date)
+    params.require(:booking).permit(:status, :game_id, :user_id, :start_date, :end_date, :price)
   end
 
   def render_error

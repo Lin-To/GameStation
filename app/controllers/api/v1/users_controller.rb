@@ -19,7 +19,7 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   def user_params
     # permit open_id?
-    params.require(:user).permit(:name, :description)
+    params.require(:user).permit(:name, :description, :avatar)
   end
 
   def render_error
