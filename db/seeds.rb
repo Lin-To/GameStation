@@ -1,3 +1,4 @@
+Booking.destroy_all
 Game.destroy_all
 User.destroy_all
 
