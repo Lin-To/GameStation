@@ -230,3 +230,12 @@ Game.create(
 
 p User.all
 p Game.all
+
+
+30.times do
+  Booking.create!(user: User.all.sample,
+    game: Game.all.sample,
+    start_date: Date.today + 1,
+    end_date: Date.today + rand(1..4),
+    status: 0 )
+end
