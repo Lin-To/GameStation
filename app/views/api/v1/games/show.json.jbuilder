@@ -1,4 +1,3 @@
-
 json.extract! @game, :id, :name, :description, :user_id, :edition, :start_date, :end_date
 json.user @game.user, :id, :name, :avatar
 # json.comments @game.comments do |comment|
