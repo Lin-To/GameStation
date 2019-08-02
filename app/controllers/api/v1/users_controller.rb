@@ -6,6 +6,7 @@ class Api::V1::UsersController < Api::V1::BaseController
     @user = User.find(params[:id])
     @games = @user.games
     @bookings = @user.bookings
+    @requests = Booking.joins(:game).where('games.user_id = ?', params[:id])
   end
 
   def create
