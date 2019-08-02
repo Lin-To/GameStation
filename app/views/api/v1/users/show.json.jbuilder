@@ -8,7 +8,8 @@ json.bookings @user.bookings do |booking|
   json.id booking.id
   json.start_date booking.start_date
   json.end_date booking.end_date
-  json.booking_user booking.user.name
+  # owner of game
+  json.booking_user booking.game.user.name
   json.booking_game booking.game.name
   json.status booking.status
 
@@ -19,6 +20,7 @@ json.requests @requests do |request|
   json.id request.id
   json.start_date request.start_date
   json.end_date request.end_date
+  # people making the quest
   json.request_user request.user.name
   json.request_game request.game.name
   json.status request.status
